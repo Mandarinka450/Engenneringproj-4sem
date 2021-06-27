@@ -1,32 +1,57 @@
 {% extends 'main/base.html' %}
+{% load static %}
 {% block title %}
 <h1>Актуальные вакансии</h1>
+<h5>Всего вакансий: {{ count }}</h5>
 {% endblock %}
+{% block search %}
 
+  <form class="row" action="{% url 'vacancies' %}">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input type="text" id="autocomplete-input" class="autocomplete" name="search">
+          <label for="autocomplete-input">найдите легко и быстро</label>
+        </div>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}
 {% block content %}
 
-{% for el in vacancies %}
+{% for el in page_object.object_list %}
 
             <div class="block"><h4 class="block__title">{{ el.name_of_vacancy }}</h4>
-                   <p class="block__description"> <b>Описание:</b> {{ el.description }}</p>
-                <div class="block__salary"><b>Заработная плата:</b> {{ el.salary_of_mounth }} тыс.руб.</div>
-                   <div class="block__graphic"><b>График работы:</b> {{ el.graphic_of_work }}</div>
+                <div class="block__about-work"><p class="block__description"> <b>Описание:</b> {{ el.description }}</p></div><br/>
+                <div class="block__salary"><b>Заработная плата:</b> {{ el.salary_of_mounth }} тыс.руб.</div><br/>
+                   <div class="block__graphic"><b>График работы:</b> {{ el.graphic_of_work }}</div><br/>
+                <a class="waves-effect waves-light btn" style="margin-top:20px;">Откликнуться</a><br/>
                 </div>
 {% endfor %}
-{% block pagination %}
-<div class="pagination">
- <span class="step-links">
-  {% if page.has_previous %}
-      <a href="?page={{ page.previous_page_number }}">Предыдущая</a>
-  {% endif %}
-    <span class="current">
-  Страница {{ page.number }} из {{ page.paginator.num_pages }}.
-    </span>
-  {% if page.has_next %}
-        <a href="?page={{ page.next_page_number }}">Следующая</a>
-  {% endif %}
-  </span>
-</div>
 {% endblock %}
+{% block pagination %}
+<ul class="pagination">
+    <li class="{% if not prev_url %} disabled {% endif %}"><a href="{{ prev_url }}"><i class="material-icons">chevron_left</i></a></li>
+    {% for n in page_object.paginator.page_range %}
+        {% if page_object.number == n %}
+              <li class="active"><a href="?page={{ n }}">{{ n }}</a></li>
+        {% else  %}
+            <li class="waves-effect"><a href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+    {% endfor %}
+    <li class="waves-effect {% if not next_url %} disabled {% endif %}"><a href="{{ next_url }}"><i class="material-icons">chevron_right</i></a></li>
+</ul>
+{% endblock %}
+{% block pic %}
+<div class="wrapper">
+        <div class="wrapper__content">
+            <img class="wrapper__picture" src="{% static 'image/work.jpg' %}" alt="">
+        </div>
+    </div>
 {% endblock %}
 
+{% block content2 %}
+
+{% endblock %}

@@ -35,14 +35,19 @@
     <main>
         <div class="container">
             {% block title %}{% endblock %}
+            {% block search %}{% endblock %}
             <div class="container__content">
                <div class="container__block">
         {% block content %}
-                   {% block pagination %}{% endblock %}
                    {% endblock %}
                </div>
             </div>
+            {% block pagination %}{% endblock %}
         </div>
+    {% block pic %}{% endblock %}
+        {% block content2 %}
+
+        {% endblock %}
 
     </main>
         <footer class="page-footer">
