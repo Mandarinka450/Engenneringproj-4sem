@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +126,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = 'vacancies'
+LOGOUT_REDIRECT_URL = '/'
+
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static"),
 ]
@@ -132,3 +137,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

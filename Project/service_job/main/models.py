@@ -105,3 +105,16 @@ class Reviews(models.Model):
     def __str__(self):
        return self.name
 
+class Reviews_about_service(models.Model):
+    id_review = models.AutoField(primary_key=True)
+    name = models.CharField('Имя пользователя', max_length=55)
+    surname = models.CharField('Фамилия пользователя', max_length=155)
+    title = models.CharField('Заголовок отзыва', max_length=255)
+    message = models.TextField('Сообщение')
+    class Meta:
+        verbose_name = "Отзыв о сервисе"
+        verbose_name_plural = "Отзывы о сервисе"
+
+
+    def __str__(self):
+       return self.name

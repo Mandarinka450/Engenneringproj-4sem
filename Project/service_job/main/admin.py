@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Vacancies, Vacancies_cities, Companies, Reviews, Users, Summary
+from .models import Vacancies, Vacancies_cities, Companies, Reviews, Users, Summary, Reviews_about_service
 from django.urls import reverse
 from django.utils.http import urlencode
 from django.utils.html import format_html
@@ -89,6 +89,13 @@ class ReviewsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Reviews, ReviewsAdmin)
+
+class Reviews_about_serviceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'surname', 'title', 'message')
+    search_fields = ("name__startswith", )
+
+
+admin.site.register(Reviews_about_service, Reviews_about_serviceAdmin)
 
 
 

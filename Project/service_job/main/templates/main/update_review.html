@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+<h1>Редактирование отзыва</h1>
+{% endblock %}
+{% block adreviews %}
+<div class="form">
+    <div class="form__image_left">
+        <img src="https://sun6-20.userapi.com/s/v1/ig2/I7miNcrwu6-74HJJk-ZMgb8Httu1h8VqSxIFBrJ9LictI99NCWBc_-G3HZSaO4ScPQ9BdLZPphrc-ykN6R4mwUVx.jpg?size=400x0&quality=96&crop=0,237,606,606&ava=1" alt="">
+    </div>
+<form class="form__content" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="form__button" type="submit" name="button" value="Отправить заявку">Редактировать отзыв</button>
+</form>
+</div>
+<div class="section white">
+        <div class="row">
+            <h1 class="header">Немного о нас</h1>
+            <p class="grey-text text-darken-3 lighten-3">
+                Мы рады приветствовать вас на нашем сайте! Мы новый сервис по поиску работы, здесь собраны самые актуальные вакансии со всех городов России. А наши профессионалы помогут вам подобрать адекватную работу и проконсультировать по ряду важных и серьезных вопросов, например, по сотавлению резюме или с чего начать вообще.
+                Мы предоставляем кучу сервисов по написанию резюме!
+
+            </p>
+             <hr>
+            <p>
+                Наш сервис гарантирует вам, что вы найдете работу за 3 дня. Мы подберем для вас отличную должность, рядом с вашим домом и достойной заработной платой.
+                Наш телефон +7(945)7870000 ждет вашего звонка для консультации!
+            </p>
+        </div>
+</div>
+{% endblock %}
+
