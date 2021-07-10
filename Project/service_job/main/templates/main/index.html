@@ -15,8 +15,8 @@
 <body>
     <main>
         <div class="wrapper">
-            <div class="wrapper__header">
-                <div class="wrapper__container">
+            <div class="wrapper__header" role="banner">
+                <div class="wrapper__container" role="navigation">
                     <div class="body">
                         <button id="button" class="body__button">WorkSearch</button>
                         <div class="body__header-burger">
@@ -25,13 +25,13 @@
                         <nav class="body__menu">
                             <ul class="body__list">
                                 <li>
-                                    <a href="{% url 'vacancies' %}" class="body__link">Вакансии</a>
+                                    <a href="{% url 'vacancies' %}" class="body__link" role="link">Вакансии</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'reviews' %}" class="body__link">Отзывы</a>
+                                    <a href="{% url 'reviews' %}" class="body__link" role="link">Отзывы</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="body__link">Отзывы</a>
+                                    <a href="{% url 'arcticle' %}" class="body__link" role="link">Статьи</a>
                                 </li>
                             </ul>
                         </nav>

@@ -38,3 +38,6 @@ class ArticlesView(APIView):
         "message": "Articles with id `{}` has been deleted.".format(pk)
       }, status=204)
 
+def index(request):
+    articles = Articles.objects.all()
+    return render(request, 'index.html', {'articles': articles})

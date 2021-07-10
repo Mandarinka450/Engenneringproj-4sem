@@ -102,17 +102,12 @@ def update_view(request, id_review):
     return render(request, "main/update_review.html", context)
 
 def delete_view(request, id_review):
-    # dictionary for initial data with
-    # field names as keys
     context ={}
-
-    # fetch the object related to passed id
     obj = get_object_or_404(Reviews_about_service, id_review=id_review)
-
-
     if request.method =="POST":
 
         obj.delete()
         return HttpResponseRedirect("/reviews")
-
     return render(request, "main/delete_review.html", context)
+
+

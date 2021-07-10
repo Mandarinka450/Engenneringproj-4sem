@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Инженерный проект</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}">
+        <link rel="stylesheet" href="{% static 'style1.css' %}">
+        <link rel="stylesheet" href="{% static 'style3.css' %}">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header>
+        <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <div class="container">
+                <a href="#" class="brand-logo">WorkSearch</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{% url 'vacancies' %}">Вакансии</a></li>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                    <li><a href="{% url 'arcticle' %}">Статьи</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{% url 'vacancies' %}">Вакансии</a></li>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                    <li><a href="{% url 'arcticle' %}">Статьи</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="container__login">
+            {% if user.is_authenticated %}
+                      <h5>Привет, {{ user.username }}!</h5>
+                     <h5><a href="{% url 'logout' %}">Выйти</a></h5>
+                     {% else %}
+                     <h5>Вы не авторизованы!</h5>
+                <div class="container__link-login">
+                    <h5><a href="{% url 'login' %}">Войти / </a></h5>
+                    <h5><a href="{% url 'signup' %}"> Зарегистрироваться</a></h5>
+                </div>
+                     {% endif %}
+                </div>
+            {% block title %}{% endblock %}
+            {% block search %}{% endblock %}
+            <div class="container__content">
+               <div class="container__block">
+        {% block content %}
+                   {% endblock %}
+               </div>
+            </div>
+            {% block pagination %}{% endblock %}
+              {% block reviews %}{% endblock %}
+            {% block adreviews %}{% endblock %}
+            {% block updatereviews %}{% endblock %}
+            {% block deletereviews %}{% endblock %}
+            {% block login %} {% endblock %}
+            {% block signup %}{% endblock %}
+            {% block arcticle %}{%  endblock %}
+        </div>
+    {% block pic %}{% endblock %}
+        {% block content2 %}
+
+        {% endblock %}
+        <div class="container">
+        <div class="section white">
+        <div class="row">
+            <h1 class="header">Немного о нас</h1>
+            <p class="grey-text text-darken-3 lighten-3">
+                Мы рады приветствовать вас на нашем сайте! Мы новый сервис по поиску работы, здесь собраны самые актуальные вакансии со всех городов России. А наши профессионалы помогут вам подобрать адекватную работу и проконсультировать по ряду важных и серьезных вопросов, например, по сотавлению резюме или с чего начать вообще.
+                Мы предоставляем кучу сервисов по написанию резюме!
+
+            </p>
+             <hr>
+            <p>
+                Наш сервис гарантирует вам, что вы найдете работу за 3 дня. Мы подберем для вас отличную должность, рядом с вашим домом и достойной заработной платой.
+                Наш телефон +7(945)7870000 ждет вашего звонка для консультации!
+            </p>
+        </div>
+</div>
+        </div>
+
+    </main>
+        <footer class="page-footer">
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="container__center">
+               <p>© 2021 WorkSearch</p>
+            </div>
+            <p>Все права защищены</p>
+        </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    </body>
+</html>
+<style>
+    .reviews__review{
+    width: 60%;
+    margin: 40px auto;
+}
+.reviews__title{
+    margin-top: 60px;
+    text-align: center;
+}
+.form{
+    padding: 30px;
+    box-shadow: 0 0 15px rgb(5, 170, 235);
+}
+
+.reviews__card{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(122,122,122,0.5);
+    padding: 10px;
+    width: 100%;
+    border-top: 2px solid #850505;
+    border-right: 2px  solid #eb770b;
+    border-bottom: 2px solid #fcf80d;
+    border-left: 2px solid #00b7ff;
+}
+.review{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.review__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 15%;
+    min-height: 150px;
+}
+.review__image{
+    width: 100%;
+}
+
+.review__content1 a{
+    margin-right: 30px;
+}
+.review__content1{
+    width: 70%;
+}
+.review__name{
+    text-align: center;
+}
+.review__content1{
+    display: flex;
+    flex-direction: column;
+}
+.reviews__message{
+    width: 70%;
+    margin: 20px auto;
+    background-color: rgba(20, 184, 124, 0.8);
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    height: 75px;
+    font-weight: bolder;
+    opacity: 0.7;
+    padding-top: 2px;
+    border: 2px solid rgba(0, 255, 4, 1);
+    border-radius: 2%;
+}
+.container__button{
+    margin: 30px 0px;
+    border:none;
+}
+.btn, .btn-large{
+    background-color: black;
+}
+.addreview, .container__login{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container__link-login{
+   display: flex;
+  flex-direction: row;
+}
+
+</style>

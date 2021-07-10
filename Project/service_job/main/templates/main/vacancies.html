@@ -6,7 +6,7 @@
 {% endblock %}
 {% block search %}
 
-  <form class="row" action="{% url 'vacancies' %}">
+  <form class="row" action="{% url 'vacancies' %}" role="form">
     <div class="col s12">
       <div class="row">
         <div class="input-field col s12">
@@ -27,7 +27,7 @@
                 <div class="block__about-work"><p class="block__description"> <b>Описание:</b> {{ el.description }}</p></div><br/>
                 <div class="block__salary"><b>Заработная плата:</b> {{ el.salary_of_mounth }} тыс.руб.</div><br/>
                    <div class="block__graphic"><b>График работы:</b> {{ el.graphic_of_work }}</div><br/>
-                <a class="waves-effect waves-light btn" style="margin-top:20px;">Откликнуться</a><br/>
+                <a class="waves-effect waves-light btn" style="margin-top:20px;" role="button">Откликнуться</a><br/>
                 </div>
 {% endfor %}
 {% endblock %}
@@ -47,7 +47,7 @@
 {% block pic %}
 <div class="wrapper">
         <div class="wrapper__content">
-            <img class="wrapper__picture" src="{% static 'image/work.jpg' %}" alt="">
+            <img class="wrapper__picture" src="{% static 'image/work.jpg' %}" alt="Ободряющее кофе на столе">
         </div>
     </div>
 {% endblock %}

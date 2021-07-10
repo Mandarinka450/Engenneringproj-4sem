@@ -4,17 +4,17 @@
 <h1>Напишите нам отзыв!</h1>
 {% endblock %}
 {% block adreviews %}
-<div class="form">
+<div class="form" >
     <div class="form__image_left">
-        <img src="https://im0-tub-ru.yandex.net/i?id=dc32cd4dd4c77b302d68b556a44bffe6-l&n=13" alt="">
+        <img src="https://im0-tub-ru.yandex.net/i?id=dc32cd4dd4c77b302d68b556a44bffe6-l&n=13" alt="Тяжелое утро, стол весь в бумагах деловых людей">
     </div>
-<form class="form__content" method="POST" enctype="multipart/form-data">
+<form class="form__content" method="POST" enctype="multipart/form-data" role="form">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="form__button" type="submit" name="button" value="Отправить заявку">Добавить отзыв</button>
+    <button class="form__button" type="submit" name="button" value="Отправить заявку" role="button">Добавить отзыв</button>
 </form>
 </div>
-<div class="section white">
+<div class="section white" role="main">
         <div class="row">
             <h1 class="header">Немного о нас</h1>
             <p class="grey-text text-darken-3 lighten-3">
