@@ -1,0 +1,72 @@
+nav{
+    background-color: black;
+}
+nav ul a:hover {
+    transform: scale(1.2,1.2);
+    transition: 0.3s all;
+}
+.selected{
+    font-weight: bolder;
+    font-size: 20px;
+    border-bottom: 3px solid white;
+}
+.selected:hover{
+    border-bottom: none;
+}
+hr{
+    margin: 10px auto;
+    width: 20%;
+    height: 3px;
+    background-color: black;
+}
+h1{
+    text-align: center;
+}
+.footer-copyright  p{
+    font-size: 19px;
+    text-align: center;
+}
+.page-footer, .footer-copyright{
+    background-color: black;
+}
+.container__about1{
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+    box-shadow: 0 0 15px rgba(122,122,122,0.5);
+    padding: 40px;
+}
+.container__about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+    padding: 40px;
+}
+.container__image{
+    width: 30%;
+    height: auto;
+}
+.container__image img{
+    width: 100%;
+    border-radius: 100%;
+}
+.container__info{
+    width: 40%;
+}
+.container__link{
+    width: 27%;
+    margin: 50px auto;
+}
+.container__button{
+    font-size: 21px;
+    padding: 20px;
+    width: 200px;
+    margin: 20px auto;
+    height: 50px;
+    color: white;
+    border: none;
+    background-color: blue;
+}

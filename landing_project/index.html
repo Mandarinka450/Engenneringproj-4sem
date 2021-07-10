@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Инженерный проект</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="materialize\css\materialize.min.css">
+        <link rel="stylesheet" href="style\style6.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header>
+        <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <div class="container">
+                <a href="#" class="brand-logo">Сервис по поиску работы. Проект Django</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" class="selected">Главная</a></li>
+                    <li><a href="">Проблема</a></li>
+                    <li><a href="">Команда</a></li>
+                    <li><a href="">Технологии</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="">Проблема</a></li>
+                    <li><a href="">Команда</a></li>
+                    <li><a href="">Технологии</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </div>
+    </header>
+    <main>
+        <div class="parallax-container">
+            <div class="parallax">
+                <img src="https://keenfolk.com/sites/default/files/images/cover_picture_The-Myth-of-the-Larger-Than-Life-Leader_SOURCE_stocksy.jpg" alt="">
+            </div>
+        </div> 
+    </main>
+    <div class="container">
+        <h2>Проблема?</h2>
+        <p style="text-indent:60px; text-align:justify;"> Сейчас вся информация, представленная на сайте, выводится из базы данных. И для управления базой данных мы обращаемся к административной части сайта.
+            Соотвественно необходимо, чтобы интерфейс административной части чайта был прост и удобен в использовании, чтобы можно было с легкостью структуризировать информацию, добавлять ее,
+            редактировать, удалять и т.д. С помощью Django мы можем реализовать все эти функции, для удобства также можно добавить фильтры, поиск, что я и сделала. Также необходимо, чтобы сам сервис был с понятным интерфейсом и удобным, все-таки люди разных возрастов ищут для себя работу.
+            Сайт должен иметь продуманный дизайн и функционал, и для решения этой проблемы был добавлен такой функционал как CRUD, авторизация и решистрация, вывод информации, dashboard.
+        </p>
+        <h2>Команда разработки</h2>
+        <div class="container__about">
+            <div class="container__image"><img src="https://sun1-25.userapi.com/BtY0I_GBOmNGZOnijdvZzIkn1ieuCbwMzh29Lw/Y2TWX4DMvvQ.jpg" alt=""></div>
+            <div class="container__info">
+                <h4>Савченко Анастасия</h4>
+                <p style="text-indent:60px; text-align:justify;">Создатель сервиса по поиску работы, студентка 2 курса Московского Политехнического института.
+                    Занималась реализацией и настройкой админки, создание и заполнение базы данных, созданием самого сервиса с продуманным функционалом и дизайном.
+                </p>
+                <a href="https://github.com/Mandarinka450/Engenneringproj-4sem.git">Перейти к репозиторию</a><br>
+                <a href="https://vk.com/mandarinka450">Я вконтакте</a>
+            </div>
+        </div>
+        <h2>Используемые технологии</h2>
+        <div class="container__about1">
+            <div class="container__image"><img src="https://www.360edukraft.com/wp-content/uploads/2018/08/Python-Django-Certification-Training-course.jpg" alt=""></div>
+            <div class="container__info">
+                <h4>Django</h4>
+                <p style="text-align:justify;">Фреймворк, подходящий для разработки сложных сайтов и веб-приложений, написанный на языке программирования Python.
+                    С помощью этого фреймворка осуществлялась реализация и настройка административной части, управление базой данных.
+                </p>
+            </div>
+        </div>
+        <div class="container__about1">
+            <div class="container__info">
+                <h4>HTML</h4>
+                <p style="text-align:justify;">Написание самого лендинга проекта, написание статичсекого кода для главной страницы. Разметка страницы и расположение блоков.
+                </p>
+            </div>
+            <div class="container__image"><img src="https://i.ytimg.com/vi/z1Ud64KWshI/maxresdefault.jpg" alt=""></div>
+        </div>
+        <div class="container__about1">
+            <div class="container__image"><img src="https://pbs.twimg.com/media/Dev59djXkAAFpFL.jpg:large" alt=""></div>
+            <div class="container__info">
+                <h4>CSS5</h4>
+                <p style="text-align:justify;">Написание стилей для страницы. Разработка внешнего оформления страницы и отображения элементов.
+                </p>
+            </div>
+        </div>
+        <div class="container__about1">
+            <div class="container__info">
+                <h4>Фреймворк Materialized</h4>
+                <p style="text-align:justify;">Использование такого фреймворка гораздо упрощает верстку и создание адаптивного интерфейса.
+                </p>
+            </div>
+            <div class="container__image"><img src="https://i.ytimg.com/vi/SMKtWr610cI/maxresdefault.jpg" alt=""></div>
+        </div>
+        <div class="container__about1">
+            <div class="container__info">
+                <h4>JQuery</h4>
+                <p style="text-align:justify;">javascript библиотека, использование которой делает разработку на javascript кода намного быстрее и проще. Использовался для плавной анимации, валидации форм.
+                </p>
+            </div>
+            <div class="container__image"><img src="https://wpbp.in/wp-content/uploads/2018/06/jQuery-1021x675.jpg" alt=""></div>
+        </div>
+        <div class="container__about1">
+            <div class="container__image"><img src="https://reader011.staticloud.net/reader011/html5/20190105/55a68dfd1a28abbe7d8b47df/bg1.png" alt=""></div>
+            <div class="container__info">
+                <h4>Django REST framework</h4>
+                <p>Реализация RESTfull API. Работа с форматом json.
+                </p>
+            </div>
+        </div>
+        <div class="container__link">
+            <a class="container__button" href="http://engineeringproj-3sem.std-942.ist.mospolytech.ru/">Перейти к проекту</a>
+        </div>
+        <div class="center">
+        <iframe src="https://drive.google.com/file/d/1-5ryiiZRIfAeZ-csYuQQZGCblrRxqmCo/preview?resourcekey=null" width="640" height="480"></iframe>
+        </div>
+        <div class="center">
+            <video src="promo.mp4" controls="controls" width="1200" style="margin-top:50px;"/>
+        </div>
+    </div>
+    
+       
+   
+   <footer class="page-footer">
+   <div class="footer-copyright">
+            <div class="container">
+                <p>Савченко Анастасия Андреевна</p>
+                <p>Группа 191-321</p>
+            </div>
+          </div>
+  </footer>
+
+
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> 
+    
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+            $('.modal').modal({
+                opacity:0.8,
+            });
+            $('.parallax').parallax();
+            $(".carousel.carousel-slider").carousel({
+                fullWidth:true,
+                indicators:true,
+                duration:500,
+    
+            });
+        });
+    </script>   
+    </body>
+</html>
