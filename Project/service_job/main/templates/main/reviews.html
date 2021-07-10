@@ -3,7 +3,7 @@
 {% block title %}
 <div class="addreview">
     <h1>Наши отзывы</h1>
-    <button class="container__button"><a class="waves-effect waves-light btn-large" href="{% url 'adreview' %}">Добавить отзыв</a></button>
+    <button class="container__button" role="button"><a class="waves-effect waves-light btn-large" href="{% url 'adreview' %}">Добавить отзыв</a></button>
     </div>
 <span><i>Сегодняшняя дата</i> : {% now "jS F Y H:i" %}</span>
 <h5>Всего отзывов: {{ count2 }}</h5>
@@ -17,7 +17,7 @@
                     <div class="review">
                         <div class="review__content">
                             <h4 class="review__name">{{ el.name }}</h4>
-                            <img class="review__image" src="https://yt3.ggpht.com/a/AATXAJwgHplxvzUq--p96fs0hqQ49SlpR89bX1YxEZe_Ew=s900-c-k-c0xffffffff-no-rj-mo" alt="">
+                            <img class="review__image" src="https://yt3.ggpht.com/a/AATXAJwgHplxvzUq--p96fs0hqQ49SlpR89bX1YxEZe_Ew=s900-c-k-c0xffffffff-no-rj-mo" alt="Любимый Гомер из симпсонов">
                             <p class="review__mail"><b>{{ el.surname }}</b></p>
 
                         </div>
@@ -25,8 +25,8 @@
                             <h3 class="review__title">{{ el.title }}</h3>
                             <p class="review__message">{{ el.message }}</p>
                             <div class="review__links">
-                                <a class="review__link1" href="{% url 'review_update' id_review=el.id_review %}">Редактировать</a>
-                                <a class="review__link2" href="{% url 'review_delete' id_review=el.id_review %}">Удалить</a>
+                                <a class="review__link1" href="{% url 'review_update' id_review=el.id_review %}" role="link">Редактировать</a>
+                                <a class="review__link2" href="{% url 'review_delete' id_review=el.id_review %}" role="link">Удалить</a>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
 
 {% endblock %}
 {% block pagination %}
-<ul class="pagination">
+<ul class="pagination" role="pagination">
     <li class="{% if not prev_url %} disabled {% endif %}"><a href="{{ prev_url }}"><i class="material-icons">chevron_left</i></a></li>
     {% for n in page_object.paginator.page_range %}
         {% if page_object.number == n %}

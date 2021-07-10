@@ -4,13 +4,13 @@
 <h1>Удаление отзыва</h1>
 {% endblock %}
 {% block deletereviews %}
-<form method="POST">
+<form method="POST" role="form">
         {% csrf_token %}
         <h5>Вы правда хотите удалить этот отзыв?</h5>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Удалить</button>
-        <a href="/reviews">Вернуться к отзывам</a>
+        <button class="btn waves-effect waves-light" type="submit" name="action" role="button">Удалить</button>
+        <a href="/reviews" role="link">Вернуться к отзывам</a>
     </form>
-<div class="section white">
+<div class="section white" role="main">
         <div class="row">
             <h1 class="header">Немного о нас</h1>
             <p class="grey-text text-darken-3 lighten-3">

@@ -10,22 +10,22 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <header role="banner">
+        <header>
         <div class="navbar-fixed">
-        <nav role="navigation">
+        <nav>
             <div class="nav-wrapper">
                 <div class="container">
                 <a href="#" class="brand-logo">WorkSearch</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{% url 'vacancies' %}" role="link">Вакансии</a></li>
-                    <li><a href="{% url 'reviews' %}" role="link">Отзывы</a></li>
-                    <li><a href="{% url 'arcticle' %}" role="link">Статьи</a></li>
+                    <li><a href="{% url 'vacancies' %}">Вакансии</a></li>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                    <li><a href="{% url 'arcticle' %}">Статьи</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{% url 'vacancies' %}" role="link">Вакансии</a></li>
-                    <li><a href="{% url 'reviews' %}" role="link">Отзывы</a></li>
-                    <li><a href="{% url 'arcticle' %}" role="link">Статьи</a></li>
+                    <li><a href="{% url 'vacancies' %}">Вакансии</a></li>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                    <li><a href="{% url 'arcticle' %}">Статьи</a></li>
                 </ul>
             </div>
             </div>
@@ -33,7 +33,7 @@
     </div>
     </header>
     <main>
-        <div class="container" role="main">
+        <div class="container">
             <div class="container__login">
             {% if user.is_authenticated %}
                       <h5>Привет, {{ user.username }}!</h5>
@@ -41,8 +41,8 @@
                      {% else %}
                      <h5>Вы не авторизованы!</h5>
                 <div class="container__link-login">
-                    <h5><a href="{% url 'login' %}" role="link">Войти / </a></h5>
-                    <h5><a href="{% url 'signup' %}" role="link"> Зарегистрироваться</a></h5>
+                    <h5><a href="{% url 'login' %}">Войти / </a></h5>
+                    <h5><a href="{% url 'signup' %}"> Зарегистрироваться</a></h5>
                 </div>
                      {% endif %}
                 </div>
@@ -61,7 +61,7 @@
             {% block deletereviews %}{% endblock %}
             {% block login %} {% endblock %}
             {% block signup %}{% endblock %}
-             {% block arcticle %}{%  endblock %}
+            {% block arcticle %}{%  endblock %}
         </div>
     {% block pic %}{% endblock %}
         {% block content2 %}
@@ -84,13 +84,9 @@
         </div>
 </div>
         </div>
-<div class="parallax-container">
-        <div class="parallax">
-            <img src="https://vsthemes.org/uploads/posts/2019-06/1581998604_funny-minimalist_vsthemes_ru-9.jpg" alt="Один из отряда звездных войн">
-        </div>
-    </div>
+
     </main>
-        <footer class="page-footer" role="contentinfo">
+        <footer class="page-footer">
     <div class="footer-copyright">
         <div class="container">
             <div class="container__center">
@@ -112,36 +108,7 @@
 
     </body>
 </html>
-<script>
-        $(document).ready(function () {
-            $(".button-collapse").sideNav();
-            $('.modal').modal({
-                opacity:0.8,
-            });
-            $('.parallax').parallax();
-            $(".carousel.carousel-slider").carousel({
-                fullWidth:true,
-                indicators:true,
-                duration:500,
-
-            });
-        });
-    </script>
 <style>
-   @media print{
-         .card-image, nav, .print-doc, li, footer, .section, .container__login{
-         display:none;
-         }
-         h1{
-            ont-size:23px;
-         }
-         h4, h5, p{
-             font-size:23px;
-         }
-         @page:first {
-              margin:0cm;
-         }
-   }
     .reviews__review{
     width: 60%;
     margin: 40px auto;
@@ -227,42 +194,5 @@
    display: flex;
   flex-direction: row;
 }
-@media (max-width:988px) {
-    .container__block{
-        grid-template-columns: repeat(auto-fit,minmax(600px,1fr));
-    }
-    .block__description, .block__salary, .block__graphic{
-        font-size: 30px;
-    }
-    .block__title{
-        font-size: 41px;
-    }
-    h1{
-        font-size: 60px;
-    }
-    .row p{
-        font-size: 40px;
-    }
-    .container__subtitle{
-        font-size: 35px;
-    }
-    #pages{
-        font-size: 42px;
-    }
-    .form__content > input{
-        font-size: 30px;
-        height: 5rem;
-    }
-    .form__content > button{
-        font-size: 27px;
-        height: 70px;
-    }
-    .footer-copyright  .container_center > p{
-        font-size: 32px;
-    }
-    .block__link{
-        font-size: 28px;
-    }
-}
-</style>
 
+</style>

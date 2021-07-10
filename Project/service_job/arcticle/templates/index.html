@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+<h1>Интересные статьи</h1>
+<a class="print-doc" style="margin-top: 20px;" href="javascript:(print());"> Распечатать печатную версию</a>
+{%  endblock %}
+{% block arcticle %}
+{% for el in articles %}
+<div style="margin-bottom:60px;" class="col s12 m7">
+    <h5 class="header">{{ el.title }}</h5>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://rual-kazan.ru/wp-content/uploads/2017/01/ser_txt_2-768x784.jpg" alt="Две эелегантные ручки на фоне очков и книг">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>{{ el.description }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{%  endfor %}
+{%  endblock %}

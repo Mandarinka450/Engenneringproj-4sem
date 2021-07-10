@@ -1,12 +1,8 @@
 from django.urls import path
 
-from .views import ArticlesView
+from . import views
 
 
-app_name = "articles"
-
-# app_name will help us do a reverse look-up latter.
 urlpatterns = [
-    path('articles/', ArticlesView.as_view()),
-    path('articles/<int:pk>', ArticlesView.as_view())
+    path('arcticles/', views.index, name='arcticle'),
 ]
